@@ -94,7 +94,6 @@ const MainNavigator = createDrawerNavigator(
       screen: BottomNavigator,
       navigationOptions: {
         drawerLabel: 'Главная'
-        // drawerIcon: <Ionicons name='ios-star' />
       }
     },
     About: {

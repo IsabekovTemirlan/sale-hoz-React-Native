@@ -1,4 +1,4 @@
 export const THEME = {
-  MAIN_COLOR: '#303f9f',
+  MAIN_COLOR: '#ff5722',
   DANGER_COLOR: '#d81b60'
 }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
 import { AppLoading } from 'expo'
 import { Provider } from 'react-redux'
 import { AppNavigation } from './src/navigation/AppNavigation'
@@ -24,4 +23,4 @@ export default function App() {
       <AppNavigation />
     </Provider>
   )
-}
+} 

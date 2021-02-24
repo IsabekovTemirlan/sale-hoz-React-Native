@@ -2,22 +2,24 @@ import React from 'react'
 import {
   View,
   StyleSheet,
-  ImageBackground,
+  Image,
   Text,
   TouchableOpacity
 } from 'react-native'
+import {THEME} from "../theme"
 
-export const Post = ({ post, onOpen }) => {
+export const Post = ({item}) => {
+
   return (
-    <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(post)}>
+    <TouchableOpacity activeOpacity={0.7}>
       <View style={styles.post}>
-        <ImageBackground style={styles.image} source={{ uri: post.img }}>
+
+          <Image style={styles.image} source={{uri: item.photo[0].url}}/>
+        
           <View style={styles.textWrap}>
-            <Text style={styles.title}>
-              {new Date(post.date).toLocaleDateString()}
-            </Text>
+            <Text style={styles.title}> {item.title} <Text style={styles.title}> {item.price} </Text></Text>
           </View>
-        </ImageBackground>
+
       </View>
     </TouchableOpacity>
   )
@@ -26,20 +28,23 @@ export const Post = ({ post, onOpen }) => {
 const styles = StyleSheet.create({
   post: {
     marginBottom: 15,
-    overflow: 'hidden'
+    width: "100%",
   },
   image: {
     width: '100%',
-    height: 200
+    height: 170,
+    backgroundColor: '#ccc'
   },
   textWrap: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    paddingVertical: 5,
-    alignItems: 'center',
-    width: '100%'
+    padding: 5,
+    width: '100%',
+    backgroundColor: '#bbb'
   },
-  title: {
-    color: '#fff',
-    fontFamily: 'open-regular'
+  title: {    
+    color: THEME.MAIN_COLOR,
+    fontFamily: 'open-regular',
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginRight: 100
   }
 })

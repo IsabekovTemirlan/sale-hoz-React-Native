@@ -1,14 +1,20 @@
 import React from 'react'
-import { View, StyleSheet, FlatList } from 'react-native'
-import { Post } from './Post'
+import { View, StyleSheet, Text, FlatList } from 'react-native'
+import {useSelector} from 'react-redux'
+import {Post} from "./Post"
 
-export const PostList = ({ data, onOpen }) => {
+export const PostList = () => {
+  const ads = useSelector(state => state.ads.allAds)
+  // const ads = [{_id: "23424234234234", title: 'Cow', price: 5000, photo: [{url: 'google.com'}]},
+  // {_id: "23we24234234234", title: 'Cow', price: 5000, photo: [{url: 'google.com'}]}]
+
+  
   return (
     <View style={styles.wrapper}>
       <FlatList
-        data={data}
-        keyExtractor={post => post.id.toString()}
-        renderItem={({ item }) => <Post post={item} onOpen={onOpen} />}
+        keyExtractor={ad => ad._id} 
+        data={ads}
+        renderItem={Post}
       />
     </View>
   )
@@ -16,6 +22,6 @@ export const PostList = ({ data, onOpen }) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 10
+    padding: 5,
   }
 })

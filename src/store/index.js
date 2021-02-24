@@ -1,8 +1,9 @@
-import { createStore, combineReducers } from 'redux'
-import { postReducer } from './reducers/post'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { adsReducer } from './reducers/ads'
 
 const rootReducer = combineReducers({
-  post: postReducer
+  ads: adsReducer
 })
 
-export default createStore(rootReducer)
+export default createStore(rootReducer, applyMiddleware(thunk))

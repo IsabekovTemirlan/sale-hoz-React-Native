@@ -1,4 +1,5 @@
 import React from 'react'
+import { Text, View } from 'react-native'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 import { useSelector } from 'react-redux'
 import { AppHeaderIcon } from '../components/AppHeaderIcon'
@@ -13,9 +14,8 @@ export const BookedScreen = ({ navigation }) => {
     })
   }
 
-  const bookedPosts = useSelector(state => state.post.bookedPosts)
 
-  return <PostList data={bookedPosts} onOpen={openPostHandler} />
+  return <Text>booked</Text>
 }
 
 BookedScreen.navigationOptions = ({ navigation }) => ({
